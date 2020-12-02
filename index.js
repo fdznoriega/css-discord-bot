@@ -18,25 +18,16 @@ client.on('message', (message) => {
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    // slice removes characters from a string
+    // slice removes characters from a string (0 to prefix.length)
     // trim removes white space from the sides
-    // split creates an array from that string
+    // split creates an array from that string using the argument as the separating value
 
-    // NEW CODE
     if(command === 'beep') {
         message.channel.send("boop");
     }
     else if(command === 'ping') {
         message.channel.send("pong");
     }
-
-    // OLD CODE
-    // if(message.content === `${prefix}ping`) {
-    //     message.channel.send("pong!")
-    // }
-    // else if(message.content === `${prefix}beep`) {
-    //     message.channel.send("boop");
-    // }
 
 });
 
